@@ -1,0 +1,5 @@
+D:\Mitch\Documents\Visual Studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\obj\Debug\BusPirateLibCS.csprojResolveAssemblyReference.cache
+D:\Mitch\Documents\Visual Studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\bin\Debug\BusPirateLibCS.dll
+D:\Mitch\Documents\Visual Studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\bin\Debug\BusPirateLibCS.pdb
+D:\Mitch\Documents\Visual Studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\obj\Debug\BusPirateLibCS.dll
+D:\Mitch\Documents\Visual Studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\obj\Debug\BusPirateLibCS.pdb

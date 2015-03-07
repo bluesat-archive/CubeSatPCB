@@ -1,0 +1,16 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [DTMF.PcbDoc]
+   Generated File[DTMF.GTL]
+   Generated File[DTMF.GBL]
+   Generated File[DTMF.GTO]
+   Generated File[DTMF.GBO]
+   Generated File[DTMF.RUL]
+   Generated File[DTMF.EXTREP]
+   Generated File[DTMF.REP]
+
+
+Files Generated   : 7
+Documents Printed : 0
+
+Finished Output Generation At 4:01:16 PM On 14-06-2014

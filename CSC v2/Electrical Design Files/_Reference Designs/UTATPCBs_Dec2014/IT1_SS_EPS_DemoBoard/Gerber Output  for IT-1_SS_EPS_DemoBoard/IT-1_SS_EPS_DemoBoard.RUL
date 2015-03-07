@@ -1,0 +1,6 @@
+DRC Rules Export File for PCB: C:\Users\Sam\Dropbox\SpaceSystems201416\Design\Power\Altium\IT-1_SS_EPS_DemoBoard\IT-1_SS_EPS_DemoBoard.PcbDoc
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=9.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=Clearance|RuleName=Via Clearance|Scope=Board|Minimum=19.69

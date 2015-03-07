@@ -1,0 +1,85 @@
+NB: BOARD STACKUP AND COPPER THICKNESS IS SPECIFIED FOR THIS BOARD
+
+BOARD
+	IT1_SS_COMS_TRPASW_R3
+
+LAST REVISED
+	2014 20 20
+
+REFER ALL BOARD SPECIFIC QUESTIONS TO
+	Stephen Lau
+		swl.lau@mail.utoronto.ca
+		spacesystems@utat.skule.ca
+		647 781 3578
+	
+FILES INCLUDED
+	.Gerber
+	.odb
+	.pdf shematic
+	.SchDoc files for three circuits
+	.PcbDoc files for one board with three circuits
+	fab_notes (this file)
+	
+LAYER STACKUP
+	TOP
+	13 mil FR4 (here specified for impedence)
+	GROUND
+	POWER
+	BOTTOM
+	
+	Layer spacing between other layers not important, but please preserve stackup order (top, ground, power, bottom)
+	
+COPPER
+	1.4 mil / 1.0 oz on all layers (specified for impedence)
+	
+BOARD DESCRIPTION
+	2 Copies of three indepedent RF circuits (~437 MHz)
+		CC1120 Transceiver Circuit
+		RF5110G Amplifier Circuit
+		SWITCH Circuit
+
+FABRICATION NOTES
+	Could not add component designators to silk screen because of density
+	DFM check needs to be done
+	
+ASSEMBLY NOTES
+	Passives on the PCB will be assembled by UTAT
+	We request microart assemble the main chips and SMA connector below. These are included on the BOM
+	We have RF5110G and CC1120 chips on hand, we can ship these chips if that is helpful
+	
+	Main CHIPS
+		RF Microdevices RF5110G
+		Texas Instruments CC1120
+		Skyworks SKY13299-321LF
+		
+	SMA CONNECTOR
+		Generic FEMALE 50 OHM SMD Straight connector
+			EXAMPLE: SMA-10V21-TGG
+			
+CHANGE LOG
+	20141205
+		First Submission
+		
+	20141213 - IT1_SS_COMS_TRPASW_R2
+		1. Moved/rerouted all board features 200mil from edge
+		2. Removed one unecessary connector for the CC1120 circuit
+		3. Fixed a number of via connections to Ground and VCC on CC1120 circuit
+		4. Added relevant parts for assembly to central BOM
+		
+	20142020 - IT1_SS_COMS_TRPASW_R3
+		Changes to address R2 Comments from Mike at Microart
+		1. Fixed shorts on the CC1120 chip, pin 20-24. Added one missing via
+		2. Redrew circuit plane seperators to be inside board keepout layer
+		3. Fixed paste mask expansion to zero
+		4. Unable to add reference designator to silk screen
+		5. Changed solder mask expansion to 4mil from 3mil
+		6. Fixed thermal vias on RF5110G chip
+		7. Added drill table
+		8. Fixed DIP30 holes to 42 mil hole, 72 mil circular pad as requested. Maintain 2.54mm grid
+		9. Fixed fill error near ground pin of DIP connector
+		10. Will not include GM1,13,15
+		11. Added board name, logo as silkscreen
+		12. Changed drill size for RF5110G gain control header to 42 hole, 70 pad
+		13. ()
+		14. ()
+		

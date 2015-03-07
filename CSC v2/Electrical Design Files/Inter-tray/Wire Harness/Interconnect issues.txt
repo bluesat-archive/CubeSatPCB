@@ -1,0 +1,23 @@
+Issues to go through
+	Antenna Connections?
+		How are they going to connect to tray 1 and 5?
+			Should this be worked out now?
+			Or wait till Antenna guy joins BlueSat (if ever)?
+	Powering the transmitter/recievers
+//		Both on at the same time - wasted power/ interference?
+//		Does CSC choose?
+		Separate power supplies - YES
+	D-sub wires
+		Maximum current that it can handle
+		Separating ground and power lines?
+	Telemetry
+		How much?
+		Where?
+		My problem/integration teams
+	Radios
+		D-subs provided
+		Build D-Sub connectors for the radios
+	Batteries
+		Current - large amounts? - need to be split into multiple lines?
+		Fluctuating voltages?
+		

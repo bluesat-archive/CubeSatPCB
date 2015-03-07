@@ -1,0 +1,63 @@
+UTAT Space Systems Phase I
+
+BOARD
+	"Magnetorquer PCB Phase I"
+	
+LAST REVISED
+	2014 12 17
+
+AUTHOR
+Sanjeev Narayanaswamy
+
+ACKNOWLEDGEMENTS
+Shawn Lee, Eric Elmoznino, Samantha Murray, Stephen Lau
+and Hayden Lau
+
+PLEASE REFER ALL QUESTIONS TO
+	Sanjeev Narayanaswamy
+		sanjeev.narayanaswamy@mail.utoronto.ca
+		647 718 5533
+	
+FILES INCLUDED
+	Gerber output files [/gerber/*]
+	ODB++ output files [/odb/*]
+	Altium Project file [Magnetorquer_PCB.PrjPcb]
+	Altium PCB file [Magnetorquer_PCB.PcbDoc]
+	Altium SCH file [Magnetorquer_PCB.SchDoc]
+	Bill of Materials [Magnetorquer_PCB_BOM.xlsx]
+	Manufacturing Details [ManufacturingDetails.txt, this file]
+	
+LAYER STACKUP
+	TOP SIGNAL
+	7 Signal Layers Inbetween
+	1 Mid Layer
+	BOTTOM SIGNAL
+
+COPPER THICKNESS
+	4oz thickness
+
+BOARD THICKNESS
+	No specification (preferrably all the internal layers should be of equal thickness as well as the top layer with the bottom layer)
+
+BOARD MATERIAL
+	No specification (FR4 is OK)
+
+MASK & SILKSCREEN COLOUR
+	No specification (Green/White is OK)
+	
+QUANTITY TO MANUFACTURE
+	2
+	
+BOARD DESCRIPTION
+	Magnetorquer Coil and its necessary 
+	H-Bridge Driver
+	
+FABRICATION NOTES
+	All the traces are 8mil in thickness and have a Copper thickness of 4oz.
+	
+ASSEMBLY NOTES
+	-Please see Magnetorquer_PCB_BOM.xlsx for components & datasheet links
+	-All components listed in the BOM except connectors have been specifically chosen to meet the         performance requirements
+	-Connectors can be swapped for identical footprint versions if desired
+	
+	

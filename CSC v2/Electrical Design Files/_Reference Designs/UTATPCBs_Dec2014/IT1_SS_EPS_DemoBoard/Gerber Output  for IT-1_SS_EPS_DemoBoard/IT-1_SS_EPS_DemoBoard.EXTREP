@@ -1,0 +1,21 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: IT-1_SS_EPS_DemoBoard.GBR   12/21/2014  2:31:46 AM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                Top Layer                               
+.GP1                GND Plane                               
+.GBL                Bottom Layer                            
+.GPB                Bottom Pad Master                       
+.GPT                Top Pad Master                          
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GBS                Bottom Solder                           
+.GM1                Mechanical 1                            
+.GD1                Drill Drawing                           
+.GG1                Drill Guide                             
+------------------------------------------------------------------------------------------

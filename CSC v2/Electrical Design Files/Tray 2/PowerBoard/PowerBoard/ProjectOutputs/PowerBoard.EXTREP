@@ -1,0 +1,20 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PowerBoard.GBR   23/03/2013  4:33:19 PM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                Top Layer                               
+.GP1                Internal Plane 2                        
+.GP2                Internal Plane 1                        
+.GBL                Bottom Layer                            
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GD1                Drill Drawing                           
+------------------------------------------------------------------------------------------

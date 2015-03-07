@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: C:\DF - SL\Dropbox\Administrative\Sponsorship\2014-2015\MicroArt\UTATPCBs_Dec2014\IT-1_COMS_TXRX\Current Revision - IT1_SS_COMS_TRPASW_R3\Altium\Layout.PcbDoc
+RuleKind=Clearance|RuleName=7|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=8.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

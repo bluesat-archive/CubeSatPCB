@@ -1,0 +1,21 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [PowerBoard.PrjPcb]
+   Generated File[PowerBoard.GTL]
+   Generated File[PowerBoard.GP1]
+   Generated File[PowerBoard.GP2]
+   Generated File[PowerBoard.GBL]
+   Generated File[PowerBoard.GTO]
+   Generated File[PowerBoard.GTS]
+   Generated File[PowerBoard.GBS]
+   Generated File[PowerBoard.GBO]
+   Generated File[PowerBoard.GD1]
+   Generated File[PowerBoard.RUL]
+   Generated File[PowerBoard.EXTREP]
+   Generated File[PowerBoard.REP]
+
+
+Files Generated   : 12
+Documents Printed : 0
+
+Finished Output Generation At 10:22:59 AM On 14/06/2012

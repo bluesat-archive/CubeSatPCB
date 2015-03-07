@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: PowerBoard.PcbDoc   21/03/2013  2:03:28 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : PowerBoard.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        11.81mil (0.29997mm)     Round          326              55.80 Inch (1417.31 mm)
+T2        12.99mil (0.32995mm)     Round          96               7.64 Inch (194.16 mm)
+T3        28mil (0.7112mm)         Round          40               20.88 Inch (530.28 mm)
+T4        39.37mil (1mm)           Round          24               4.00 Inch (101.55 mm)
+T5        122.05mil (3.10007mm)    Round          2                6.85 Inch (174.00 mm)
+T6        137.8mil (3.50012mm)     Round          4                11.49 Inch (291.92 mm)
+T7        94.49mil (2.40005mm)     Round          6         NPTH   1.87 Inch (47.55 mm)
+---------------------------------------------------------------------------
+Totals                                            498              108.53 Inch (2756.77 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

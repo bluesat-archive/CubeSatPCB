@@ -1,0 +1,818 @@
+{COMPONENT PROTEL.PCB
+  {ENVIRONMENT PROTEL.SCH}
+  {DETAIL
+    {SUBCOMP
+      {I PTS645.PRT BP1
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        }
+      }
+      {I PTS645.PRT BP2
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        }
+      }
+      {I PTS645.PRT BP3
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        }
+      }
+      {I PTS645.PRT BP4
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        }
+      }
+      {I 0805 Cap.PRT C1
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C4
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C5
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C7
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C8
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C9
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C10
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C11
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C12
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C13
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C14
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C15
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C17
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C18
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C19
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C22
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C100
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C119
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C120
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C121
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C123
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C124
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C125
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C126
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C127
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C128
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C129
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C130
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Cap.PRT C131
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 LED.PRT D2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 LED.PRT D3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 LED.PRT D4
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 LED.PRT D5
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 2.1mm Jack.PRT J1
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I HDR1X7.PRT J11
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        }
+      }
+      {I HDR1X7.PRT J13
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        }
+      }
+      {I HDR2X20.PRT J14
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+       17 ?
+       18 ?
+       19 ?
+       20 ?
+       21 ?
+       22 ?
+       23 ?
+       24 ?
+       25 ?
+       26 ?
+       27 ?
+       28 ?
+       29 ?
+       30 ?
+       31 ?
+       32 ?
+       33 ?
+       34 ?
+       35 ?
+       36 ?
+       37 ?
+       38 ?
+       39 ?
+       40 ?
+        }
+      }
+      {I HDR2X20.PRT J15
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+       17 ?
+       18 ?
+       19 ?
+       20 ?
+       21 ?
+       22 ?
+       23 ?
+       24 ?
+       25 ?
+       26 ?
+       27 ?
+       28 ?
+       29 ?
+       30 ?
+       31 ?
+       32 ?
+       33 ?
+       34 ?
+       35 ?
+       36 ?
+       37 ?
+       38 ?
+       39 ?
+       40 ?
+        }
+      }
+      {I HDR2X20.PRT J18
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+       17 ?
+       18 ?
+       19 ?
+       20 ?
+       21 ?
+       22 ?
+       23 ?
+       24 ?
+       25 ?
+       26 ?
+       27 ?
+       28 ?
+       29 ?
+       30 ?
+       31 ?
+       32 ?
+       33 ?
+       34 ?
+       35 ?
+       36 ?
+       37 ?
+       38 ?
+       39 ?
+       40 ?
+        }
+      }
+      {I HDR2X20.PRT J19
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+       17 ?
+       18 ?
+       19 ?
+       20 ?
+       21 ?
+       22 ?
+       23 ?
+       24 ?
+       25 ?
+       26 ?
+       27 ?
+       28 ?
+       29 ?
+       30 ?
+       31 ?
+       32 ?
+       33 ?
+       34 ?
+       35 ?
+       36 ?
+       37 ?
+       38 ?
+       39 ?
+       40 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-1
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-4
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-5
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP1-6
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X2.PRT JP11
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I HDR1X3.PRT JP17
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I HDR1X3.PRT JP18
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I HDR1X3.PRT JP19
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I HDR1X3.PRT JP20
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I 0805 Resistor.PRT L1
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT L2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT L3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I ZEN056V130A24L.PRT MN1
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I BNX002.PRT MN2
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        }
+      }
+      {I MIC29152WU.PRT MN3
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        }
+      }
+      {I AT24C512C.PRT MN12
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        }
+      }
+      {I SOIC127P570X175-16N.PRT MN14
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+        }
+      }
+      {I TSOP65P640X120-24N.PRT MN16
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        4 ?
+        5 ?
+        6 ?
+        7 ?
+        8 ?
+        9 ?
+       10 ?
+       11 ?
+       12 ?
+       13 ?
+       14 ?
+       15 ?
+       16 ?
+       17 ?
+       18 ?
+       19 ?
+       20 ?
+       21 ?
+       22 ?
+       23 ?
+       24 ?
+        }
+      }
+      {I 3 Pin SOT-23.PRT Q1
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I 3 Pin SOT-23.PRT Q2
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I SOT95P237X112-3N.PRT Q3
+        {CN
+        1 ?
+        2 ?
+        3 ?
+        }
+      }
+      {I 0805 Resistor.PRT R1
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R4
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R5
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R6
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R7
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R10
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R11
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R12
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R13
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R14
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R16
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R23
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R83
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R111
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R112
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R119
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R120
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R121
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R122
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R123
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT R124
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT RR7-1
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT RR7-2
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT RR7-3
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+      {I 0805 Resistor.PRT RR7-4
+        {CN
+        1 ?
+        2 ?
+        }
+      }
+    }
+  }
+}

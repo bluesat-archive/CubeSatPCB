@@ -1,0 +1,560 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD14\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">28/10/2013</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">4:22:49 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc" class="file"><acronym title="C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc">C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">68</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDTVDGS4M43HSQEYAVF3VH42QFRG"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVPLUGISENME1MX5TJIDO1VXNYF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGOV4JSMEV5RHJRKESIUPDHH3EH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">68</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK3HBR1ROTA0LCTOWRDTY4WFTBG">Clearance Constraint (Gap=6mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUNJA2QO524YWKML3CO5I5DRRB">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGRAA3KVCFABBLZ023OKOIRUSZH">Width Constraint (Min=6mil) (Max=100mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDD3Z2KO1ODO4KFF1BIJMVRPKYOF">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPQYD0QS31LQYK3EHZJJGWYEJGF">Hole Size Constraint (Min=1mil) (Max=10000mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSTYCTTMNOGZWN5WFPVMLXB1IWI">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVNRWR50NEPECKGM1T0KU1BP5JD">Minimum Solder Mask Sliver (Gap=2mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDU1Q5KEV3ZLRXET2L1Z5K0QM2EK">Silk To Solder Mask (Clearance=3mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBXZJLAJFCI4XKIH1A10H2RTE1G">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4I3VMGMVO5AEGLFYT2EW5GHGQJ">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1VL3LNX1V3PKIOE3ODPAFGI4UH">Room 3V3 (Bounding Region = (14668.622mil, 7192.166mil, 16261.85mil, 9146.929mil) (Disabled)(InComponentClass('3V3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDY0ZRVRVM5VGRODZPYLP1YZK4D">Room 9V1 (Bounding Region = (11920.038mil, 7195.59mil, 13513.267mil, 9150.354mil) (Disabled)(InComponentClass('9V1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4BXYBPSRTRGGE3RXZWQUQZWCTC">Room 13V6 (Bounding Region = (10543.662mil, 7192.52mil, 12136.89mil, 9147.283mil) (Disabled)(InComponentClass('13V6'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDR422H2UU34TQNZH3KN5BGZMUXF">Room VVAR (Bounding Region = (9170.038mil, 7190.59mil, 10763.267mil, 9145.355mil) (Disabled)(InComponentClass('VVAR'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTXVNFBE0DZ1BL4SMLLECGKAMP">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">68</td>
+</tr>
+</table><br><hr><a name="IDGOV4JSMEV5RHJRKESIUPDHH3EH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15431.89mil|Location2.X=15681.89mil|Location1.Y=9266.536mil|Location2.Y=9466.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15431.89mil|Location2.X=15681.89mil|Location1.Y=9266.536mil|Location2.Y=9466.536mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (2781.417,-1013.701mil) And Track on layer Top Layer (2831.417,-1013.701mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14438.662mil|Location2.X=14642.045mil|Location1.Y=9314.174mil|Location2.Y=9668.476mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14438.662mil|Location2.X=14642.045mil|Location1.Y=9314.174mil|Location2.Y=9668.476mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Pad C20-1 (1788.189,-966.063mil) And Track on layer Top Layer (1791.572,-811.761mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11003.969mil|Location2.X=11249.756mil|Location1.Y=9279.486mil|Location2.Y=9599.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11003.969mil|Location2.X=11249.756mil|Location1.Y=9279.486mil|Location2.Y=9599.447mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (-1646.504,-1000.75mil) And Pad R43-1 (-1600.716,-880.79mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15248.189mil|Location2.X=15614.252mil|Location1.Y=8851.3mil|Location2.Y=9054.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15248.189mil|Location2.X=15614.252mil|Location1.Y=8851.3mil|Location2.Y=9054.094mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (2597.716,-1428.937mil) And Track on layer Top Layer (2763.78,-1426.143mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12569.134mil|Location2.X=12781.575mil|Location1.Y=9282.126mil|Location2.Y=9661.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12569.134mil|Location2.X=12781.575mil|Location1.Y=9282.126mil|Location2.Y=9661.339mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (-81.338,-998.11mil) And Pad R32-1 (-68.898,-818.898mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15590.004mil|Location2.X=15830.783mil|Location1.Y=8839.277mil|Location2.Y=8927.891mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15590.004mil|Location2.X=15830.783mil|Location1.Y=8839.277mil|Location2.Y=8927.891mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Pad U2A-23 (2847.421,-1496.653mil) And Pad U2A-14 (3072.421,-1496.653mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15722.894mil|Location2.X=16172.598mil|Location1.Y=8851.593mil|Location2.Y=9040.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15722.894mil|Location2.X=16172.598mil|Location1.Y=8851.593mil|Location2.Y=9040.079mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Via (3072.421,-1428.643mil) And Track on layer Top Layer (3322.126,-1440.158mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.166mil|Location2.X=11067.922mil|Location1.Y=9369.628mil|Location2.Y=9403.849mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.166mil|Location2.X=11067.922mil|Location1.Y=9369.628mil|Location2.Y=9403.849mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Pad J9-1 (-2110.716,-993.136mil) And Pad U12-9 (-1724.889,-1000.75mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14004.354mil|Location2.X=14459.11mil|Location1.Y=9440.103mil|Location2.Y=9474.324mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14004.354mil|Location2.X=14459.11mil|Location1.Y=9440.103mil|Location2.Y=9474.324mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Pad J3-1 (1280.472,-922.661mil) And Pad U8-9 (1666.299,-930.275mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12105.536mil|Location2.X=12560.291mil|Location1.Y=9391.048mil|Location2.Y=9425.614mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12105.536mil|Location2.X=12560.291mil|Location1.Y=9391.048mil|Location2.Y=9425.614mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Pad J6-1 (-618.346,-971.37mil) And Pad U9-9 (-232.519,-979.331mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12333.543mil|Location2.X=12617.953mil|Location1.Y=9935.748mil|Location2.Y=9500.906mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12333.543mil|Location2.X=12617.953mil|Location1.Y=9935.748mil|Location2.Y=9500.906mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (-316.929,-344.488mil) And Pad U9-9 (-232.519,-979.331mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15475.393mil|Location2.X=15680.866mil|Location1.Y=8854.094mil|Location2.Y=9438.032mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15475.393mil|Location2.X=15680.866mil|Location1.Y=8854.094mil|Location2.Y=9438.032mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (2824.921,-1426.143mil) And Pad U11-3 (2830.394,-1042.205mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11083.543mil|Location2.X=11985.78mil|Location1.Y=9398.347mil|Location2.Y=9508.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11083.543mil|Location2.X=11985.78mil|Location1.Y=9398.347mil|Location2.Y=9508.867mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (-1566.929,-881.89mil) And Via (-864.693,-971.37mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14474.732mil|Location2.X=15631.89mil|Location1.Y=9468.476mil|Location2.Y=9655.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14474.732mil|Location2.X=15631.89mil|Location1.Y=9468.476mil|Location2.Y=9655.512mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Via (1824.259,-811.761mil) And Track on layer Top Layer (2781.417,-824.725mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12615.039mil|Location2.X=13871.559mil|Location1.Y=9461.339mil|Location2.Y=9557.576mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12615.039mil|Location2.X=13871.559mil|Location1.Y=9461.339mil|Location2.Y=9557.576mil|Absolute=True">Un-Routed Net Constraint: Net 3V3_BUS Between Track on layer Top Layer (-35.433,-818.898mil) And Track on layer Top Layer (1021.086,-922.661mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9719.196mil|Location2.X=9975.567mil|Location1.Y=8997.322mil|Location2.Y=9187.914mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9719.196mil|Location2.X=9975.567mil|Location1.Y=8997.322mil|Location2.Y=9187.914mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-2931.277,-1282.915mil) And Track on layer Top Layer (-2874.905,-1292.323mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13069.196mil|Location2.X=13306.181mil|Location1.Y=9052.322mil|Location2.Y=9214.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13069.196mil|Location2.X=13306.181mil|Location1.Y=9052.322mil|Location2.Y=9214.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (418.723,-1227.915mil) And Via (455.709,-1265.709mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=9980.316mil|Location2.Y=10110.867mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=9980.316mil|Location2.Y=10110.867mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-728.346,-374.016mil) And Via (-728.346,-295.276mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11556.89mil|Location2.X=11845.567mil|Location1.Y=8997.324mil|Location2.Y=9187.914mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11556.89mil|Location2.X=11845.567mil|Location1.Y=8997.324mil|Location2.Y=9187.914mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R45D-2 (-1093.582,-1282.913mil) And Track on layer Top Layer (-1004.905,-1292.323mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13904.354mil|Location2.X=14057.535mil|Location1.Y=9527.442mil|Location2.Y=9560.938mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13904.354mil|Location2.X=14057.535mil|Location1.Y=9527.442mil|Location2.Y=9560.938mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J2-3 (1180.472,-836.047mil) And Pad J3-3 (1280.472,-836.047mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11905.536mil|Location2.X=12058.717mil|Location1.Y=9478.733mil|Location2.Y=9512.229mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11905.536mil|Location2.X=12058.717mil|Location1.Y=9478.733mil|Location2.Y=9512.229mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J4-3 (-818.346,-884.756mil) And Pad J5-3 (-718.346,-884.756mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12005.536mil|Location2.X=12158.717mil|Location1.Y=9478.733mil|Location2.Y=9512.229mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12005.536mil|Location2.X=12158.717mil|Location1.Y=9478.733mil|Location2.Y=9512.229mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J5-3 (-718.346,-884.756mil) And Pad J6-3 (-618.346,-884.756mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10413.166mil|Location2.X=10566.347mil|Location1.Y=9456.967mil|Location2.Y=9490.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10413.166mil|Location2.X=10566.347mil|Location1.Y=9456.967mil|Location2.Y=9490.463mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J7-3 (-2310.716,-906.522mil) And Pad J8-3 (-2210.716,-906.522mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10513.166mil|Location2.X=10666.347mil|Location1.Y=9456.967mil|Location2.Y=9490.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10513.166mil|Location2.X=10666.347mil|Location1.Y=9456.967mil|Location2.Y=9490.463mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J8-3 (-2210.716,-906.522mil) And Pad J9-3 (-2110.716,-906.522mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=9872.048mil|Location2.Y=10032.127mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=9872.048mil|Location2.Y=10032.127mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-728.346,-374.016mil) And Via (-728.346,-482.284mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13723.071mil|Location2.X=14030.945mil|Location1.Y=9446.111mil|Location2.Y=9644.536mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13723.071mil|Location2.X=14030.945mil|Location1.Y=9446.111mil|Location2.Y=9644.536mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J1-3 (1072.598,-834.126mil) And Track on layer Top Layer (1180.472,-835.7mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11647.11mil|Location2.X=11845.961mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11647.11mil|Location2.X=11845.961mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB3-5 (-1062.992,-184.646mil) And Pad JB3-3 (-944.882,-184.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011.283mil|Location2.X=10210.134mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011.283mil|Location2.X=10210.134mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB1-5 (-2698.819,-184.646mil) And Pad JB1-3 (-2580.709,-184.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10840.023mil|Location2.X=11038.874mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10840.023mil|Location2.X=11038.874mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB2-5 (-1870.079,-184.646mil) And Pad JB2-3 (-1751.968,-184.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13034.589mil|Location2.X=13199.386mil|Location1.Y=8164.945mil|Location2.Y=8229.544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13034.589mil|Location2.X=13199.386mil|Location1.Y=8164.945mil|Location2.Y=8229.544mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R16C-1 (308.738,-2187.717mil) And Pad R18C-2 (421.338,-2175.315mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15832.819mil|Location2.X=15953.087mil|Location1.Y=9060.622mil|Location2.Y=9173.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15832.819mil|Location2.X=15953.087mil|Location1.Y=9060.622mil|Location2.Y=9173.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R45A-2 (3109.921,-1231.339mil) And Via (3176.709,-1293.709mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14929.471mil|Location2.X=15053.087mil|Location1.Y=9063.622mil|Location2.Y=9175.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14929.471mil|Location2.X=15053.087mil|Location1.Y=9063.622mil|Location2.Y=9175.015mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R45B-2 (2206.574,-1229.844mil) And Via (2276.709,-1290.709mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9775.063mil|Location2.X=9962.102mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9775.063mil|Location2.X=9962.102mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C27-2 (-2950.787,-511.811mil) And Pad C26-2 (-2812.992,-511.811mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10050.654mil|Location2.X=10237.693mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10050.654mil|Location2.X=10237.693mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C25-2 (-2675.197,-511.811mil) And Pad C24-2 (-2537.401,-511.811mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10188.449mil|Location2.X=10375.488mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10188.449mil|Location2.X=10375.488mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C24-2 (-2537.401,-511.811mil) And Pad C23-2 (-2399.606,-511.811mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13131.81mil|Location2.X=13342.567mil|Location1.Y=8792.519mil|Location2.Y=9127.528mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13131.81mil|Location2.X=13342.567mil|Location1.Y=8792.519mil|Location2.Y=9127.528mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Bottom Layer (481.338,-1487.717mil) And Track on layer Top Layer (492.095,-1352.709mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12038.843mil|Location2.X=12088.087mil|Location1.Y=9703.056mil|Location2.Y=9915.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12038.843mil|Location2.X=12088.087mil|Location1.Y=9703.056mil|Location2.Y=9915.685mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C37-2 (-687.008,-649.606mil) And Pad C35-2 (-687.008,-492.126mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=10059.056mil|Location2.Y=10268.347mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11996.22mil|Location2.X=12048.031mil|Location1.Y=10059.056mil|Location2.Y=10268.347mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-728.346,-295.276mil) And Via (-728.346,-137.795mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11226.835mil|Location2.X=11459.15mil|Location1.Y=9959.945mil|Location2.Y=10009.189mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11226.835mil|Location2.X=11459.15mil|Location1.Y=9959.945mil|Location2.Y=10009.189mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C29-2 (-1496.063,-395.669mil) And Pad C28-2 (-1318.898,-395.669mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11656.89mil|Location2.X=11863.819mil|Location1.Y=8737.521mil|Location2.Y=9122.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11656.89mil|Location2.X=11863.819mil|Location1.Y=8737.521mil|Location2.Y=9122.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Bottom Layer (-993.582,-1542.716mil) And Pad C1D-1 (-986.654,-1357.717mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12831.81mil|Location2.X=13075.591mil|Location1.Y=9091.572mil|Location2.Y=9447.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12831.81mil|Location2.X=13075.591mil|Location1.Y=9091.572mil|Location2.Y=9447.48mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (181.338,-1188.665mil) And Pad D2-2 (225.118,-1032.756mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10203.543mil|Location2.X=10409.211mil|Location1.Y=8372.52mil|Location2.Y=8324.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10203.543mil|Location2.X=10409.211mil|Location1.Y=8372.52mil|Location2.Y=8324.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (-2446.929,-1907.717mil) And Track on layer Top Layer (-2441.262,-2156.065mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13610.236mil|Location2.X=14080.157mil|Location1.Y=8432.52mil|Location2.Y=8644.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13610.236mil|Location2.X=14080.157mil|Location1.Y=8432.52mil|Location2.Y=8644.252mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R27-2 (959.764,-1847.717mil) And Track on layer Top Layer (1229.685,-1835.984mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12220.236mil|Location2.X=12469.21mil|Location1.Y=8392.52mil|Location2.Y=8329.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12220.236mil|Location2.X=12469.21mil|Location1.Y=8392.52mil|Location2.Y=8329.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R23-2 (-430.236,-1887.717mil) And Track on layer Top Layer (-381.262,-2151.064mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11579.606mil|Location2.X=11787.48mil|Location1.Y=9772.363mil|Location2.Y=10295.591mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11579.606mil|Location2.X=11787.48mil|Location1.Y=9772.363mil|Location2.Y=10295.591mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (-1070.866,-507.874mil) And Pad JB3-5 (-1062.992,-184.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12616.992mil|Location2.X=13000.213mil|Location1.Y=9419.905mil|Location2.Y=9481.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12616.992mil|Location2.X=13000.213mil|Location1.Y=9419.905mil|Location2.Y=9481.551mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C21-2 (-105.905,-923.307mil) And Pad D1-2 (225.118,-932.756mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10129.394mil|Location2.X=10542.811mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10129.394mil|Location2.X=10542.811mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB1-3 (-2580.709,-184.646mil) And Pad C30-2 (-2232.283,-177.165mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15560.394mil|Location2.X=15767.518mil|Location1.Y=9051.496mil|Location2.Y=9627.009mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15560.394mil|Location2.X=15767.518mil|Location1.Y=9051.496mil|Location2.Y=9627.009mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4A-1 (2909.921,-1228.741mil) And Track on layer Top Layer (2917.046,-853.228mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10539.756mil|Location2.X=10929.212mil|Location1.Y=9411.1mil|Location2.Y=9822.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10539.756mil|Location2.X=10929.212mil|Location1.Y=9411.1mil|Location2.Y=9822.756mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (-2110.716,-869.136mil) And Track on layer Top Layer (-1921.26,-657.48mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14425.237mil|Location2.X=14720.394mil|Location1.Y=9375.552mil|Location2.Y=9252.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14425.237mil|Location2.X=14720.394mil|Location1.Y=9375.552mil|Location2.Y=9252.991mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (1774.764,-904.685mil) And Via (1869.922,-1227.246mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15085.038mil|Location2.X=15730.866mil|Location1.Y=9421.852mil|Location2.Y=9627.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15085.038mil|Location2.X=15730.866mil|Location1.Y=9421.852mil|Location2.Y=9627.008mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (2434.566,-858.385mil) And Pad U11-5 (2880.394,-853.229mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.166mil|Location2.X=11067.922mil|Location1.Y=9395.219mil|Location2.Y=9490.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10613.166mil|Location2.X=11067.922mil|Location1.Y=9395.219mil|Location2.Y=9490.463mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J9-3 (-2110.716,-906.522mil) And Pad U12-10 (-1724.889,-975.16mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9912.858mil|Location2.X=10099.898mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9912.858mil|Location2.X=10099.898mil|Location1.Y=9840.851mil|Location2.Y=9896.001mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C26-2 (-2812.992,-511.811mil) And Pad C25-2 (-2675.197,-511.811mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11931.969mil|Location2.X=12132.126mil|Location1.Y=9599.134mil|Location2.Y=9640.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11931.969mil|Location2.X=12132.126mil|Location1.Y=9599.134mil|Location2.Y=9640.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (-718.504,-681.102mil) And Track on layer Top Layer (-718.346,-839.717mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12946.81mil|Location2.X=13159.211mil|Location1.Y=8300.118mil|Location2.Y=8329.172mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12946.81mil|Location2.X=13159.211mil|Location1.Y=8300.118mil|Location2.Y=8329.172mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (296.338,-1980.119mil) And Track on layer Top Layer (308.738,-2151.065mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9781.81mil|Location2.X=9993.819mil|Location1.Y=8737.519mil|Location2.Y=9122.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9781.81mil|Location2.X=9993.819mil|Location1.Y=8737.519mil|Location2.Y=9122.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Bottom Layer (-2868.662,-1542.717mil) And Pad C1E-1 (-2856.653,-1357.717mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11471.89mil|Location2.X=11782.833mil|Location1.Y=8245.12mil|Location2.Y=8326.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11471.89mil|Location2.X=11782.833mil|Location1.Y=8245.12mil|Location2.Y=8326.102mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (-1178.582,-2035.117mil) And Track on layer Top Layer (-1067.639,-2154.135mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15675.394mil|Location2.X=15907.795mil|Location1.Y=8296.694mil|Location2.Y=8289.095mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=15675.394mil|Location2.X=15907.795mil|Location1.Y=8296.694mil|Location2.Y=8289.095mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (3024.921,-1983.543mil) And Pad R16A-1 (3057.323,-2191.142mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11765.22mil|Location2.X=12048.031mil|Location1.Y=10155.221mil|Location2.Y=10268.347mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11765.22mil|Location2.X=12048.031mil|Location1.Y=10155.221mil|Location2.Y=10268.347mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB3-3 (-944.882,-184.646mil) And Via (-728.346,-137.795mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011.283mil|Location2.X=10101.181mil|Location1.Y=9891.733mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011.283mil|Location2.X=10101.181mil|Location1.Y=9891.733mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB1-5 (-2698.819,-184.646mil) And Via (-2675.197,-462.598mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11331.575mil|Location2.X=11779.606mil|Location1.Y=9884.567mil|Location2.Y=9972.363mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11331.575mil|Location2.X=11779.606mil|Location1.Y=9884.567mil|Location2.Y=9972.363mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C28-2 (-1318.898,-395.669mil) And Track on layer Top Layer (-1070.866,-507.874mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10493.567mil|Location2.X=10920.764mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10493.567mil|Location2.X=10920.764mil|Location1.Y=10155.221mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C30-2 (-2232.283,-177.165mil) And Pad JB2-5 (-1870.079,-184.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13693.488mil|Location2.X=13769.069mil|Location1.Y=8163.016mil|Location2.Y=8547.299mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=13693.488mil|Location2.X=13769.069mil|Location1.Y=8163.016mil|Location2.Y=8547.299mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R27-2 (959.764,-1847.717mil) And Pad R8B-1 (993.975,-2189.646mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10250.866mil|Location2.X=10539.756mil|Location1.Y=9768.426mil|Location2.Y=9611.1mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10250.866mil|Location2.X=10539.756mil|Location1.Y=9768.426mil|Location2.Y=9611.1mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C23-2 (-2399.606,-511.811mil) And Track on layer Top Layer (-2310.716,-869.136mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14004.354mil|Location2.X=14459.11mil|Location1.Y=9465.694mil|Location2.Y=9560.938mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14004.354mil|Location2.X=14459.11mil|Location1.Y=9465.694mil|Location2.Y=9560.938mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J3-3 (1280.472,-836.047mil) And Pad U8-10 (1666.299,-904.685mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10958.134mil|Location2.X=11240.948mil|Location1.Y=10009.844mil|Location2.Y=10235.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10958.134mil|Location2.X=11240.948mil|Location1.Y=10009.844mil|Location2.Y=10235.961mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad JB2-3 (-1751.968,-184.646mil) And Via (-1535.43,-344.488mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12105.536mil|Location2.X=12560.291mil|Location1.Y=9416.638mil|Location2.Y=9512.229mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=12105.536mil|Location2.X=12560.291mil|Location1.Y=9416.638mil|Location2.Y=9512.229mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J6-3 (-618.346,-884.756mil) And Pad U9-10 (-232.519,-953.74mil)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14964.567mil|Location2.X=15248.386mil|Location1.Y=8989.528mil|Location2.Y=9621.851mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\bluesat\Desktop\Bluesat-VC\B Bus\B1 Power\B1.2 Management\B1.2.1 Regulation\V2.1 Power Subsytem\PowerBoard\PowerBoard.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=14964.567mil|Location2.X=15248.386mil|Location1.Y=8989.528mil|Location2.Y=9621.851mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track on layer Top Layer (2314.095,-1290.709mil) And Pad U10-5 (2397.914,-858.386mil)</acronym></a><br></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

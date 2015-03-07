@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Mobo.PcbDoc]
+   Generated File[Mobo.TXT]
+   Generated File[Mobo.LDP]
+   Generated File[Mobo.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 5:55:54 PM On 28/10/2013

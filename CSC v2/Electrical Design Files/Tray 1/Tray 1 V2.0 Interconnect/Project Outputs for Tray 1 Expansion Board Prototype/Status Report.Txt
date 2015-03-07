@@ -1,0 +1,9 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [Tray 1 Expansion Board Prototype.PrjPcb]
+
+
+Files Generated   : 0
+Documents Printed : 0
+
+Finished Output Generation At 3:31:00 PM On 23/03/2013

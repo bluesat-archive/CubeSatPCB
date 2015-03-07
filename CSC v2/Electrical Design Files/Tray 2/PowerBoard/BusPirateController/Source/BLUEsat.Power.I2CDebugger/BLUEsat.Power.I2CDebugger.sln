@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 11
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLUEsat.Power.I2CDebugger", "BLUEsat.Power.I2CDebugger\BLUEsat.Power.I2CDebugger.csproj", "{CD6F8AF3-6DC7-4CD9-8A84-AF44E48C2A62}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3D03362C-AE50-43E5-946A-C149D83CA18E} = {3D03362C-AE50-43E5-946A-C149D83CA18E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusPirateLibCS", "BusPirateLibCS\BusPirateLibCS.csproj", "{3D03362C-AE50-43E5-946A-C149D83CA18E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D03362C-AE50-43E5-946A-C149D83CA18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D03362C-AE50-43E5-946A-C149D83CA18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D03362C-AE50-43E5-946A-C149D83CA18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D03362C-AE50-43E5-946A-C149D83CA18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD6F8AF3-6DC7-4CD9-8A84-AF44E48C2A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6F8AF3-6DC7-4CD9-8A84-AF44E48C2A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6F8AF3-6DC7-4CD9-8A84-AF44E48C2A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6F8AF3-6DC7-4CD9-8A84-AF44E48C2A62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

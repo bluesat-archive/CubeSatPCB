@@ -1,0 +1,306 @@
+*************************************************************
+FileName = Magnetorquer_PCB.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : Magnetorquer_PCB.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 1
+      File : Magnetorquer_PCB.G1
+
+    Adding Layer      : Signal Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 2
+      File : Magnetorquer_PCB.G2
+
+    Adding Layer      : Signal Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 3
+      File : Magnetorquer_PCB.G3
+
+    Adding Layer      : Signal Layer 3
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 4
+      File : Magnetorquer_PCB.G4
+
+    Adding Layer      : Signal Layer 4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 5
+      File : Magnetorquer_PCB.G5
+
+    Adding Layer      : Signal Layer 5
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 6
+      File : Magnetorquer_PCB.G6
+
+    Adding Layer      : Signal Layer 6
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Signal Layer 7
+      File : Magnetorquer_PCB.G7
+
+    Adding Layer      : Signal Layer 7
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Mid-Layer 1
+      File : Magnetorquer_PCB.G8
+
+    Adding Layer      : Mid-Layer 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Magnetorquer_PCB.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : Magnetorquer_PCB.GPB
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : Magnetorquer_PCB.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Magnetorquer_PCB.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D21
+    D22
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Magnetorquer_PCB.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Magnetorquer_PCB.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Magnetorquer_PCB.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D29
+    D30
+    D31
+    D32
+    D33
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Magnetorquer_PCB.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Magnetorquer_PCB.GD1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D21
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Magnetorquer_PCB.GG1
+
+    Adding Drill Pair : Top Layer-Bottom Layer
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D38
+*************************************************************
+

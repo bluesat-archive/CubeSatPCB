@@ -1,0 +1,25 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Free Documents]
+   Generated File[Layout.GTL]
+   Generated File[Layout.GP1]
+   Generated File[Layout.GP2]
+   Generated File[Layout.GBL]
+   Generated File[Layout.GPB]
+   Generated File[Layout.GPT]
+   Generated File[Layout.GTO]
+   Generated File[Layout.GTP]
+   Generated File[Layout.GTS]
+   Generated File[Layout.GBS]
+   Generated File[Layout.GKO]
+   Generated File[Layout.GD1]
+   Generated File[Layout.GG1]
+   Generated File[Layout.RUL]
+   Generated File[Layout.EXTREP]
+   Generated File[Layout.REP]
+
+
+Files Generated   : 16
+Documents Printed : 0
+
+Finished Output Generation At 3:47:11 PM On 12/20/2014

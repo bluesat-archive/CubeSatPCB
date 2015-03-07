@@ -1,0 +1,19 @@
+Recievers
+	I) DSUB
+		1) COS - Carrier Operated Switch - This is meant for repeating the signal i.e. this goes high when it recieves input (meant to power another transmitter)
+		2) Disc - For building a discriminator meter - this hovers around the center scale and then deflects when you pass a signal - probably used for tuning the variable inductors
+		3) B+ - Power (13.6V)
+		4) SPKR  - For Driving a Speaker //Unecessary
+	II) Other
+		1) Antenna Input - RCA Plug input
+		3) AF - Audio Out - SMA Connector
+	
+Transmitters
+	I) DSub
+		1) B+/E1  - Power 13.6V Variable depending on signal power out required 
+					(Controlled in tray 2)
+		2) Oven/E4 - 13.6 V - Always on during transmission periods
+		3) Gnd /E3 - Ground
+	II) Other
+		1) AF input/E2 - Audio Input (SMA connector)
+		2) Antenna Output - RCA Plug

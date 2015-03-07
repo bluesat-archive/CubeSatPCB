@@ -1,0 +1,63 @@
+UTAT Space Systems Phase 1
+
+BOARD
+	"OBC Phase I"
+	
+LAST REVISED
+	2014 12 20 - Rev 1.4
+
+REFER ALL BOARD SPECIFIC QUESTIONS TO
+	Hayden Lau
+		hayden.lau@mail.utoronto.ca
+		647 648 0161
+	
+FILES INCLUDED
+	Gerber output files [/gerber/*]
+	ODB++ output files [/odb/*]
+	Altium Project file [OBC_PhaseI.PrjPcb]
+	Altium PCB file [PCB1.PcbDoc]
+	Altium SCH file [OBC.SchDoc]
+	Design PDF [OBC_PhaseI.pdf]
+	Bill of Materials [OBC_BOM.pdf]
+	Fabrication Notes [FabNotes.txt, this file]
+	
+LAYER STACKUP
+	TOP SIGNAL
+	GROUND
+	POWER
+	BOTTOM SIGNAL
+	(No layer thickness specification)
+
+COPPER THICKNESS
+	No specification (0.5/1 ounce is OK)
+
+BOARD THICKNESS
+	No specification (0.062" is OK)
+
+BOARD MATERIAL
+	No specification (FR4 is OK)
+
+MASK & SILKSCREEN COLOUR
+	No specification (Green/White is OK)
+	
+QUANTITY TO MANUFACTURE
+	3
+	
+BOARD DESCRIPTION
+	1x ATSAM3X8E microcontroller
+		Power, crystals, reset buttons
+		Breakout headers + JTAG debug port
+	2x SPI Flash memory chips
+	1x PLCC socket for EEPROM memory
+	1x CAN transceiver
+	
+FABRICATION NOTES
+	If through-hole is a hassle to place/solder, connectors can be switched to surface-mount equivalents on request
+	Many small silkscreen clearance violations - if this is an issue, please notify
+	Panelization not done - under minimum size & can be panelized with other designs for easier board fab at small quantities
+		- was informed that this was not a problem
+	
+ASSEMBLY NOTES
+	See BOM for components & datasheet links
+	All components not filled out on BOM are generic passives - any which meet the specified characteristics will do
+	Connectors can be swapped for identical footprint versions if desired

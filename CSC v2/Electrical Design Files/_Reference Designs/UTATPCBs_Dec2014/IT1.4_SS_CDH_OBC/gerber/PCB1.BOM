@@ -1,0 +1,37 @@
+Bill of Material for 
+On 2014-12-20 at 7:46:51 AM
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 100K 5% 0805(2012)  RESC0805(2012)_L    5    R4, R5, R6, R7, R8           100K 0.125W 5% 0805 (2012 Metric)  SMD 
+ 120R 5% 0805(2012)  RESC0805(2012)_N    1    R1                           120R 0.125W 5% 0805 (2012 Metric)  SMD 
+ 1R 5% 0805(2012)    RESC0805(2012)_L    3    R10, R11, R12                1R 0.125W 5% 0805 (2012 Metric)  SMD 
+ 39R 1% 0805(2012)   RESC0805(2012)_N    2    R2, R3                       39R 0.125W 1% 0805 (2012 Metric)  SMD 
+ 3V3 In              Barrel_5.5x9     1    P3                                                
+ 6K8 1% 0805(2012)   RESC0805(2012)_N    1    R9                           6K8 0.125W 1% 0805 (2012 Metric)  SMD 
+ 7447908             SMD-0805         3    L2, L3, L4                   SMD-Multilayer Inductor WE-MI, L = 10.00 µH 
+ ATSAM3X8E           LQFP144_L        1    U1                                                
+ CAP 100nF 10V 0805(2012) CAPC0805(2012)100_N   16    C12, C13, C14, C15, C17, C18 CAP 100nF 10V ±20% 0805 (2012 Metric) Thickness 1mm SMD 
+                                           C19, C20, C21, C25, C26, C28
+                                           C30, C31, C32, C33
+ CAP 100pF 10V 0805(2012) CAPC0805(2012)100_M    2    C8, C9                       CAP 100pF 10V ±5% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 10nF 10V 0805(2012) CAPC0805(2012)100_L    1    C_1                          CAP 10nF 10V ±20% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 10pF 10V 0805(2012) CAPC0805(2012)100_L    1    C11                          CAP 10pF 10V ±5% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 10uF 10V 0805(2012) CAPC0805(2012)145_N    1    C22                          CAP 10uF 10V ±20% 0805 (2012 Metric) Thickness 1.45mm SMD 
+ CAP 1uF 10V 0805(2012) CAPC0805(2012)100_M    1    C1                           CAP 1uF 10V ±20% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 20pF 10V 0805(2012) CAPC0805(2012)100_N    4    C5, C6, C7, C10              CAP 20pF 10V ±5% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 22nF 10V 0805(2012) CAPC0805(2012)100_M    3    C2, C3, C4                   CAP 22nF 10V ±20% 0805 (2012 Metric) Thickness 1mm SMD 
+ CAP 4.7uF 10V 0805(2012) CAPC0805(2012)145_N    5    C16, C23, C24, C27, C29      CAP 4.7uF 10V ±20% 0805 (2012 Metric) Thickness 1.45mm SMD 
+ Comment             Fiducial1        3    Designator8, Designator9                          
+                                           Designator12
+ DB9 Connector - 1734354-1 DB9 Connector - 1734354-1    1    CAN1                         CONN D-SUB RCPT R/A 9POS GOLD/FL 
+ ERASE               SW_TAC_6x6       1    SW1                          SW-D6-R / SW-DS-S / SW-14X14 / SW-7X7 
+ Header 20X2         HDR2X20          2    P1, P2                       Header, 20-Pin, Dual row 
+ JTAG                Header_2X5_0.5    1    J1                           ARM JTAG Header (0.05" pitch) 
+ MH2029-300Y         0805             1    L1                           Ferrite Choke        
+ RESET               SW_TAC_6x6       1    SW2                          SW-D6-R / SW-DS-S / SW-14X14 / SW-7X7 
+ S25FL208K0RMFI041   SOIC8            2    U3, U4                       SPI Flash            
+ SN65HVD233DR        D8_N             1    U2                           3.3V CAN Transceiver with Standby Mode, Loop-back, 6 mA, -40 to 125 degC, 8-pin SOIC (D), Green (RoHS & no Sb/Br) 
+ Socket_PLCC32       Socket_PLCC32    1    S1                                                
+ XTAL_2pin           XTAL_3.2x1.5_SMD    1    Y2                           Crystal 2 pin        
+ XTAL_4pin           XTAL_3.2x2.5_SMD    1    Y1                           Crystal 4 pin        

@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [DTMF.PcbDoc]
+   Generated File[DTMF.TXT]
+   Generated File[DTMF.LDP]
+   Generated File[DTMF.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 12:00:43 AM On 18-06-2014

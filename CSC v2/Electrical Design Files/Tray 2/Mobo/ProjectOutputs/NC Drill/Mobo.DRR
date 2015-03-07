@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: Mobo.PcbDoc   28/10/2013  5:55:54 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Mobo.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        11.81mil (0.29997mm)     Round          319              52.46 Inch (1332.57 mm)
+T2        19.68mil (0.49987mm)     Round          61               19.24 Inch (488.82 mm)
+T3        30mil (0.762mm)          Round          1                0.00 Inch (0.00 mm)
+T4        35.43mil (0.89992mm)     Round          58               15.25 Inch (387.36 mm)
+T5        39.37mil (1mm)           Round          24               3.64 Inch (92.52 mm)
+T6        43.31mil (1.10007mm)     Round          4                1.40 Inch (35.67 mm)
+T7        46.85mil (1.18999mm)     Round          71               9.88 Inch (250.84 mm)
+T8        122.05mil (3.10007mm)    Round          3                13.92 Inch (353.46 mm)
+T9        125.2mil (3.18008mm)     Round          4                5.29 Inch (134.31 mm)
+T10       125.98mil (3.19989mm)    Round          4                9.45 Inch (240.00 mm)
+T11       137.8mil (3.50012mm)     Round          1                0.00 Inch (0.00 mm)
+T12       118.11mil (2.99999mm)    Round          6         NPTH   2.00 Inch (50.91 mm)
+---------------------------------------------------------------------------
+Totals                                            556              132.54 Inch (3366.45 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

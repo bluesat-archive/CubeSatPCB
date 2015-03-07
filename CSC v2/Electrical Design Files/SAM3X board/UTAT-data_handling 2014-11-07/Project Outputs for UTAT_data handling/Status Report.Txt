@@ -1,0 +1,10 @@
+Output: PCAD Netlist
+Type  : PCADNetlist
+From  : Project [UTAT_data handling.PrjPcb]
+   Generated File[Other Components.NET]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:20:38 AM On 27-12-2014

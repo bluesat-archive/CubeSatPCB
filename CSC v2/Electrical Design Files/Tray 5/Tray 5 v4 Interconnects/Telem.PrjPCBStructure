@@ -1,0 +1,3 @@
+Record=SheetSymbol|SourceDocument=TRAY5.SchDoc|Designator=ADC|SchDesignator=ADC|FileName=TELM0002ADC.SchDoc|SymbolType=Normal|RawFileName=TELM0002ADC.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=TRAY5.SchDoc|Designator=tempsens|SchDesignator=tempsens|FileName=TEMPSENS.SchDoc|SymbolType=Normal|RawFileName=TEMPSENS.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=TopLevelDocument|FileName=TRAY5.SchDoc

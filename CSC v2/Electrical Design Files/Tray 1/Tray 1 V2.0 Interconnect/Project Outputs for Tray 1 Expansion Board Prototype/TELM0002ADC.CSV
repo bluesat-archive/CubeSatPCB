@@ -1,0 +1,14 @@
+"Bill of Material for "
+"On 23/03/2013 at 10:23:21 AM"
+
+"Comment","Pattern","Quantity","Components"
+
+"0805 Cap","0805 Cap","1","C1","0805 MLCC - X7R, 10%"
+"0805 Resistor","0805 Resistor","4","R1, R2, R3, R4","0805 Thick Film Resistor 1%"
+"D Connector 15","DSUB1.385-2H15","1","J1","Receptacle Assembly, 15 Position, Right Angle"
+"D Connector 25","DSUB1.385-2H25A","1","J2","Receptacle Assembly, 25 Position, Right Angle"
+"D Connector 9","DSUB Upright","2","TX1, TX2","Receptacle Assembly, 9 Position, Right Angle"
+"DMP2004K","DMP2004KDITR-ND","1","Q1","MOSFET P-CH 20V 600MA SOT23-3"
+"DS2482-100","DS2482-100","1","U1","I2C to 1-Wire Master"
+"Header 2","HDR1X2","1","P1","Header, 2-Pin"
+"TO-92","DS18S20","1","U2","1-Wire Digital Thermometer"

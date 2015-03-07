@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [COMS.PcbDoc]
+   Generated File[COMS.TXT]
+   Generated File[COMS.LDP]
+   Generated File[COMS.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 5:00:23 PM On 07-01-2015

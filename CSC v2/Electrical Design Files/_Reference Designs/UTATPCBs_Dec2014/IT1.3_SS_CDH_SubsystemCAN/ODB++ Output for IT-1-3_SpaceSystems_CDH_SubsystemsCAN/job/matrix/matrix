@@ -1,0 +1,137 @@
+
+STEP {
+    COL=2
+    NAME=pcb
+}
+
+LAYER {
+    ROW=1
+    CONTEXT=BOARD
+    TYPE=SILK_SCREEN
+    NAME=topoverlay
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=2
+    CONTEXT=BOARD
+    TYPE=SOLDER_PASTE
+    NAME=toppaste
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=3
+    CONTEXT=BOARD
+    TYPE=SOLDER_MASK
+    NAME=topsolder
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=4
+    CONTEXT=BOARD
+    TYPE=SIGNAL
+    NAME=top
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=5
+    CONTEXT=BOARD
+    TYPE=SIGNAL
+    NAME=bottom
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=6
+    CONTEXT=BOARD
+    TYPE=SOLDER_MASK
+    NAME=bottomsolder
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=7
+    CONTEXT=BOARD
+    TYPE=DRILL
+    NAME=drill
+    POLARITY=POSITIVE
+    START_NAME=top
+    END_NAME=bottom
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=8
+    CONTEXT=MISC
+    TYPE=DOCUMENT
+    NAME=keepout
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=9
+    CONTEXT=MISC
+    TYPE=DOCUMENT
+    NAME=mechanical1
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=10
+    CONTEXT=MISC
+    TYPE=DOCUMENT
+    NAME=mechanical2
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=11
+    CONTEXT=MISC
+    TYPE=DOCUMENT
+    NAME=mechanical13
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}
+
+LAYER {
+    ROW=12
+    CONTEXT=MISC
+    TYPE=DOCUMENT
+    NAME=mechanical15
+    POLARITY=POSITIVE
+    START_NAME=
+    END_NAME=
+    OLD_NAME=
+}

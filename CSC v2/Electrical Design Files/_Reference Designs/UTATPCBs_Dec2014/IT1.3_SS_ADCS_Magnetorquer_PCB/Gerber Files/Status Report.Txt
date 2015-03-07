@@ -1,0 +1,31 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Magnetorquer_PCB.PrjPcb]
+   Generated File[Magnetorquer_PCB.GTL]
+   Generated File[Magnetorquer_PCB.G1]
+   Generated File[Magnetorquer_PCB.G2]
+   Generated File[Magnetorquer_PCB.G3]
+   Generated File[Magnetorquer_PCB.G4]
+   Generated File[Magnetorquer_PCB.G5]
+   Generated File[Magnetorquer_PCB.G6]
+   Generated File[Magnetorquer_PCB.G7]
+   Generated File[Magnetorquer_PCB.G8]
+   Generated File[Magnetorquer_PCB.GBL]
+   Generated File[Magnetorquer_PCB.GPB]
+   Generated File[Magnetorquer_PCB.GPT]
+   Generated File[Magnetorquer_PCB.GTO]
+   Generated File[Magnetorquer_PCB.GTP]
+   Generated File[Magnetorquer_PCB.GTS]
+   Generated File[Magnetorquer_PCB.GBS]
+   Generated File[Magnetorquer_PCB.GM1]
+   Generated File[Magnetorquer_PCB.GD1]
+   Generated File[Magnetorquer_PCB.GG1]
+   Generated File[Magnetorquer_PCB.RUL]
+   Generated File[Magnetorquer_PCB.EXTREP]
+   Generated File[Magnetorquer_PCB.REP]
+
+
+Files Generated   : 22
+Documents Printed : 0
+
+Finished Output Generation At 9:36:39 AM On 20/12/2014

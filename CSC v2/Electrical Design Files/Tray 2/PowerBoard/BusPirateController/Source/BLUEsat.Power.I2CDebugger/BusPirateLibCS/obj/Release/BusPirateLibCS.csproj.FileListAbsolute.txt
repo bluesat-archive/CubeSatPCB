@@ -1,0 +1,4 @@
+d:\mitch\documents\visual studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\bin\Release\BusPirateLibCS.dll
+d:\mitch\documents\visual studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\bin\Release\BusPirateLibCS.pdb
+d:\mitch\documents\visual studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\obj\Release\BusPirateLibCS.dll
+d:\mitch\documents\visual studio 11\Projects\BLUEsat.Power.I2CDebugger\BusPirateLibCS\obj\Release\BusPirateLibCS.pdb
